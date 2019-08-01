@@ -8,7 +8,7 @@ PS: web 前端 API 没有绝对的安全，该项目的本意是给不暴露源�
 ## 安装
 
 ```bash
-composer require sunding0308/laravel-api-auth
+composer require kwen/laravel-api-auth
 ```
 
 ## 配置
