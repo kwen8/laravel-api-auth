@@ -18,7 +18,7 @@ class Middleware
     {
         $this->config = config('api_auth');
     }
-    
+
     /**
      * @param Request  $request
      * @param \Closure $next
@@ -39,7 +39,13 @@ class Middleware
             $this->tokenExistCheck($token);
 
             // 得到 header 、 payload 、 signature 三段字符串
-            list($header_string, $payload_string, $signature) = explode(".", $token);
+            $tokenArray = explode(".", $token);
+
+            if (count($tokenArray) !== 3) {
+                throw new InvalidTokenException('token is invalid');
+            }
+
+            list($header_string, $payload_string, $signature) = $tokenArray;
 
             list($header, $payload, $alg) = array_values($this->parseParams($header_string, $payload_string));
 
@@ -85,7 +91,8 @@ class Middleware
         $header  = @json_decode(base64_decode($header_string), true);
         $payload = @json_decode(base64_decode($payload_string), true);
 
-        if (!is_array($header) ||
+        if (
+            !is_array($header) ||
             !isset($header['alg']) ||
             !is_array($payload) ||
             !isset($payload['timestamp']) ||
@@ -186,5 +193,4 @@ class Middleware
 
         return false;
     }
-
 }
