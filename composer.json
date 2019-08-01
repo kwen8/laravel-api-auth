@@ -1,30 +1,30 @@
 {
-    "name": "sunding0308/laravel-api-auth",
-    "description": "laravel API 鉴权",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "sunding0308",
-            "email": "sunding1992@gmail.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "SunD1ng\\LaravelApiAuth\\": "src"
-        },
-        "files": [
-            "src/fn.php"
-        ]
-    },
-    "require": {},
-    "require-dev": {
-        "laravel/laravel": "^5.5"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "SunD1ng\\LaravelApiAuth\\ServiceProvider"
-            ]
-        }
+  "name": "kwen8/laravel-api-auth",
+  "description": "laravel API 鉴权",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "kwen8",
+      "email": "418415881@qq.com"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "SunD1ng\\LaravelApiAuth\\": "src"
+    },
+    "files": [
+      "src/fn.php"
+    ]
+  },
+  "require": {},
+  "require-dev": {
+    "laravel/laravel": "^5.5"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "SunD1ng\\LaravelApiAuth\\ServiceProvider"
+      ]
+    }
+  }
 }
