@@ -6,7 +6,7 @@
  * Time: 下午3:22
  */
 
-namespace Kwen\LaravelApiAuth\Signatures;
+namespace kwen\LaravelApiAuth\Signatures;
 
 
 class Md5 implements SignatureInterface

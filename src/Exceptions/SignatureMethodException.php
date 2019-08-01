@@ -6,7 +6,7 @@
  * Time: 下午3:05
  */
 
-namespace Kwen\LaravelApiAuth\Exceptions;
+namespace kwen\LaravelApiAuth\Exceptions;
 
 class SignatureMethodException extends \Exception
 { }

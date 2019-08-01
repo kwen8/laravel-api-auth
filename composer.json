@@ -1,16 +1,16 @@
 {
-  "name": "kwen8/laravel-api-auth",
+  "name": "kwen/laravel-api-auth",
   "description": "laravel API 鉴权",
   "license": "MIT",
   "authors": [
     {
-      "name": "kwen8",
+      "name": "kwen",
       "email": "418415881@qq.com"
     }
   ],
   "autoload": {
     "psr-4": {
-      "Kwen\\LaravelApiAuth\\": "src"
+      "kwen\\LaravelApiAuth\\": "src"
     },
     "files": [
       "src/fn.php"
@@ -23,7 +23,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Kwen\\LaravelApiAuth\\ServiceProvider"
+        "kwen\\LaravelApiAuth\\ServiceProvider"
       ]
     }
   }

@@ -16,7 +16,7 @@ composer require sunding0308/laravel-api-auth
 1. 注册 `ServiceProvider`:
 
    ```php
-   Kwen\LaravelApiAuth\ServiceProvider::class,
+   kwen\LaravelApiAuth\ServiceProvider::class,
    ```
 
    > laravel 5.5+ 版本不需要手动注册
@@ -24,14 +24,14 @@ composer require sunding0308/laravel-api-auth
 2. 发布配置文件
 
    ```php
-   php artisan vendor:publish --provider="Kwen\LaravelApiAuth\ServiceProvider"
+   php artisan vendor:publish --provider="kwen\LaravelApiAuth\ServiceProvider"
    ```
 
 3. 在 `App\Http\Kernal` 中注册中间件
 
    ```php
    protected $routeMiddleware = [
-       'api_auth' => \Kwen\LaravelApiAuth\Middleware::class,
+       'api_auth' => \kwen\LaravelApiAuth\Middleware::class,
        // other ...
    ];
    ```
@@ -54,7 +54,8 @@ composer require sunding0308/laravel-api-auth
    ```
 
 5. 自定义签名方法 (可选)
-   `config/api_auth.php` 中的 `signature_methods` 可以添加自定义的签名类，该类需要继承自 `Kwen\LaravelApiAuth\Signatures\SignatureInterface` 接口
+   `config/api_auth.php` 中的 `signature_methods` 可以添加自定义的签名类，该类需要继承自 `kwen\LaravelApiAuth\Signatures\SignatureInterface` 接口
+
    ```php
    <?php
    /**
@@ -63,29 +64,30 @@ composer require sunding0308/laravel-api-auth
     * Time: 下午3:22
     */
 
-   namespace Kwen\LaravelApiAuth\Signatures;
+   namespace kwen\LaravelApiAuth\Signatures;
+   ```
 
-
-   class Md5 implements SignatureInterface
-   {
-       public static function sign(string $string, string $secret): string
-       {
-           return md5($string . $secret);
-       }
+class Md5 implements SignatureInterface
+{
+public static function sign(string $string, string $secret): string
+{
+return md5($string . $secret);
+}
 
        public static function check(string $string, string $secret, string $signature): bool
        {
            return static::sign($string, $secret) === $signature;
        }
 
-   }
-   ```
+}
+
+````
 6. 自定义错误处理
-   token 校验不通过的情况下会抛异常，请在 `Handler` 捕获后自行处理。
-   目前有三种异常 ：
-   1. AccessKeyException
-   2. InvalidTokenException
-   3. SignatureMethodException
+token 校验不通过的情况下会抛异常，请在 `Handler` 捕获后自行处理。
+目前有三种异常 ：
+1. AccessKeyException
+2. InvalidTokenException
+3. SignatureMethodException
 
 ## 使用
 
@@ -93,16 +95,16 @@ composer require sunding0308/laravel-api-auth
 
 ```php
 Route::get('api/example', function(Request $request){
-    // $request->get('client_role');
-    // todo...
+ // $request->get('client_role');
+ // todo...
 })->middleware(['api_auth']);
 
 \\ or
 
 Route::group(['middleware'=>'api_auth'], function(){
-    // routes...
+ // routes...
 });
-```
+````
 
 > 通过验证后 `$request` 会添加一个 `client_role` 字段，该字段为客户端的角色名称。
 

@@ -6,7 +6,7 @@
  * Time: 下午3:19
  */
 
-namespace Kwen\LaravelApiAuth\Signatures;
+namespace kwen\LaravelApiAuth\Signatures;
 
 interface SignatureInterface
 {

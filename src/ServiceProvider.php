@@ -1,6 +1,6 @@
 <?php
 
-namespace Kwen\LaravelApiAuth;
+namespace kwen\LaravelApiAuth;
 
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 use Illuminate\Foundation\Application as LaravelApplication;
