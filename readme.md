@@ -58,11 +58,6 @@ composer require sunding0308/laravel-api-auth
 
    ```php
    <?php
-   /**
-    * User: sunding0308
-    * Date: 2018/4/16
-    * Time: 下午3:22
-    */
 
    namespace kwen\LaravelApiAuth\Signatures;
    ```
