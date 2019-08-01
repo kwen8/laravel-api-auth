@@ -1,6 +1,6 @@
 <?php
 
-namespace SunD1ng\LaravelApiAuth;
+namespace Kwen\LaravelApiAuth;
 
 use Illuminate\Console\Command as LaravelCommand;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace SunD1ng\LaravelApiAuth;
+namespace Kwen\LaravelApiAuth;
 
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 use Illuminate\Foundation\Application as LaravelApplication;
@@ -31,5 +31,4 @@ class ServiceProvider extends LaravelServiceProvider
             Command::class,
         ]);
     }
-
 }

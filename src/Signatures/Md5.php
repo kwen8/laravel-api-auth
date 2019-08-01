@@ -1,11 +1,12 @@
 <?php
+
 /**
  * User: sunding0308
  * Date: 2018/4/16
  * Time: 下午3:22
  */
 
-namespace SunD1ng\LaravelApiAuth\Signatures;
+namespace Kwen\LaravelApiAuth\Signatures;
 
 
 class Md5 implements SignatureInterface
@@ -19,5 +20,4 @@ class Md5 implements SignatureInterface
     {
         return static::sign($string, $secret) === $signature;
     }
-
 }

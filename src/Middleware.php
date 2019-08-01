@@ -1,13 +1,13 @@
 <?php
 
-namespace SunD1ng\LaravelApiAuth;
+namespace Kwen\LaravelApiAuth;
 
 use Closure;
 use Illuminate\Http\Request;
-use SunD1ng\LaravelApiAuth\Exceptions\AccessKeyException;
-use SunD1ng\LaravelApiAuth\Exceptions\InvalidTokenException;
-use SunD1ng\LaravelApiAuth\Exceptions\SignatureMethodException;
-use SunD1ng\LaravelApiAuth\Signatures\SignatureInterface;
+use Kwen\LaravelApiAuth\Exceptions\AccessKeyException;
+use Kwen\LaravelApiAuth\Exceptions\InvalidTokenException;
+use Kwen\LaravelApiAuth\Exceptions\SignatureMethodException;
+use Kwen\LaravelApiAuth\Signatures\SignatureInterface;
 
 class Middleware
 {
@@ -24,9 +24,9 @@ class Middleware
      * @param \Closure $next
      *
      * @return mixed
-     * @throws \SunD1ng\LaravelApiAuth\Exceptions\AccessKeyException
-     * @throws \SunD1ng\LaravelApiAuth\Exceptions\InvalidTokenException
-     * @throws \SunD1ng\LaravelApiAuth\Exceptions\SignatureMethodException
+     * @throws \Kwen\LaravelApiAuth\Exceptions\AccessKeyException
+     * @throws \Kwen\LaravelApiAuth\Exceptions\InvalidTokenException
+     * @throws \Kwen\LaravelApiAuth\Exceptions\SignatureMethodException
      */
     public function handle($request, Closure $next)
     {
